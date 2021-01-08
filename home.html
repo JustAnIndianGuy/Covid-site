@@ -1,0 +1,353 @@
+{% extends "layout.html"%}
+        {% block styles %}
+        <style>
+         
+            body{
+                background-image: url("static/body.png");
+            }
+            .middleBlock{
+                /* Border is for reference only*/
+                width: 100%;
+                height: 20rem;
+                top: 12%;
+                
+            }
+            .outline{
+                width: 70%;
+                /*top: 42%;*/  
+                margin-left: auto;
+                margin-right: auto;
+                /*height: 28.5rem;*/
+                font-stretch: expanded;
+            }
+            .bottomBlock{
+                /* Border is for reference only */
+                border: 2px solid black; 
+                background-color: #fdf3e1;
+                position: relative;
+                color: #482f07;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%; 
+                font-stretch: expanded;
+                
+            }
+
+            .socialMedia{
+                position: absolute;
+                background-color: #cfc2ad;
+                height:6rem;
+                width: 3.7rem;
+                margin-left: .5%;
+                margin-top: 3rem;
+            }
+            .socialBtn{
+                background-color: #cfc2ad;
+                height: 50%;
+                width: 100%;
+            }
+
+            p{
+                text-align: center;
+                margin: 0 auto;
+                width: 90%;
+                margin-bottom: 0px;
+                margin-top: 20px;
+            }
+            h1{
+                font-family: 'CardenioModern', sans-serif;
+                text-align: center;
+                font-weight: 100;
+                font-size: 35px;
+                letter-spacing: -2.5px;
+            }
+            @media only screen and (min-width: 200px) and (max-width: 379px){
+                h1{
+                    font-size: 25px;
+                    letter-spacing: -7pp;
+                }
+                .socialMedia{
+                    position: absolute;
+                    background-color: #cfc2ad;
+                    height:4rem;
+                    width: 3rem; 
+                    margin-left: .5%;
+                    margin-top: .5%;
+                    top: 70px;
+                    left: 12px;
+                    display: none;
+                }
+            }
+            @media only screen and (min-width: 380px) and (max-width: 600px){
+                h1{
+                    font-size: 27px;
+                    letter-spacing: -7pp;
+                }
+                .socialMedia{
+                    position: absolute;
+                    background-color: #cfc2ad;
+                    height:4rem;
+                    width: 2.7rem;
+                    margin-left: .5%;
+                    margin-top: .5%;
+                    top: 70px;
+                    left: 9px;
+                    display: none;
+                }
+            }
+            @media only screen and (min-width: 601px) and (max-width: 799px){
+                h1{
+                    font-size: 30px;
+                    letter-spacing: -.25px;
+                }
+                .socialMedia{
+                    position: absolute;
+                    background-color: #cfc2ad;
+                    height:5rem;
+                    width: 3.1rem;
+                    margin-left: .5%;
+                    margin-top: 3rem;
+                    top: 20px;
+                    left: 7px;
+                }
+            } 
+             
+            @media only screen and (min-width: 800px) and (max-width: 999px){
+                h1{
+                    font-size: 35px;
+                    letter-spacing: -2px;
+                }
+                .socialMedia{
+                    position: absolute;
+                    background-color: #cfc2ad;
+                    height:6rem;
+                    width: 3.7rem;
+                    margin-left: .5%;
+                    margin-top: 3rem;
+                }
+            } 
+
+            @media only screen and (min-width: 1000px) and (max-width: 1080px){
+                h1{
+                    font-size: 50px;
+                    letter-spacing: -1.5px;
+                }
+                .socialMedia{
+                    position: absolute;
+                    background-color: #cfc2ad;
+                    height:6rem;
+                    width: 3.7rem;
+                    margin-left: .5%;
+                    margin-top: 3rem;
+                }
+            } 
+          
+            button{
+                height: 40px;
+                width: 300px;
+                bottom: 10%;
+            }
+
+            .n_pBtn{
+                position: relative;
+                bottom: 1.8rem;
+            }
+
+            #nextBtn{
+                display: none;
+                border: none;
+                background: #482f07;
+                color: #f6bd60;
+                clip-path: polygon(10% 0, 100% 0, 87% 100%, 10% 100%, 0% 50%);;
+                position: absolute;
+                left: 7%;
+                width: 47%;
+                margin: 0px 0px;
+            }
+            #previousBtn{
+                display: none;
+                border: none;
+                background: #f6bd60;
+                color: #482f07;
+                clip-path: polygon(13% 0, 90% 0, 100% 50%, 90% 100%, 0% 100%);
+                position: absolute;
+                left: 48%; 
+                width: 47%;
+                margin: 0px 0px;
+            }
+
+            #logo{
+                position: relative;
+                height: 80px;
+                width: 15%;
+                left: 40px;
+                top: 50%;
+            }
+
+            #homeBtn{
+                border: black, 5px, solid;
+                background: #F29F17;
+                color: black;
+                position: absolute;
+                top: 33%;
+                left: 55%;
+                width: 150px;
+            }
+            #storiesBtn{
+                border: black, 5px, solid;
+                background: #f6bd60;
+                color: black;
+                position: absolute;
+                top: 33%;
+                left: 65%;
+                width: 150px;
+            }
+            #aboutBtn{
+                border: black, 5px, solid;
+                background: #f6bd60;
+                color: black;
+                position: absolute;
+                top: 33%;
+                left: 75%;
+                width: 150px;
+            }
+            #contactBtn{
+                border: black, 5px, solid;
+                background: #f6bd60;
+                color: black;
+                position: absolute;
+                top: 33%;
+                left: 85%;
+                width: 150px;
+            }
+             .instaPopUp{
+                visibility: hidden;
+                background-color: #482f07;
+                position: absolute;
+                width: 30%;
+                height: 30%;
+                color: #f6bd60;
+                top: 63%;
+                left: 30%;
+            }
+            .TwPopUp {
+                visibility: hidden;
+                background-color: #482f07;
+                position: absolute;
+                width: 30%;
+                height: 30%;
+                color: #f6bd60;
+                top: 69%;
+                left: 30%;
+            }
+            .waPopUp{
+                visibility: hidden;
+                background-color: #482f07;
+          
+            position: absolute;
+                width: 30%;
+                height: 30%;
+                color: #f6bd60;
+                top: 75%;
+                left: 30%;
+            }
+            .fbPopUp{
+                visibility: hidden;
+                background-color: #482f07;
+                position: absolute;
+                width: 30%;
+                height: 30%;
+                color: #f6bd60;
+                top: 81%;
+                left: 30%;
+            }
+            #share{
+                text-align: center;
+                width: 50%;
+                font-size: 20px;
+                height: 100%;
+            }
+            #join{
+                position: absolute;
+                text-align: center;
+                width: 50%;
+                font-size: 20px;
+                right: 0;
+                top: 0px;
+                height: 100%;
+                border-left: 2px solid grey;
+                font-weight: 100;
+            }
+            #footertext{
+                text-align:center;
+
+            }
+            #instaBtn{
+                background-image:url("static/insta icon.png");
+                background-size: contain;
+            }
+            #twitterBtn{
+                background-image:url("static/twitter icon.png");
+                background-size: contain;
+            }
+            #whatsappBtn{
+                background-image:url("static/whatsapp icon.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #facebookBtn{
+                background-image:url("static/facebook icon.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+           
+
+        </style>
+        {% endblock %}
+        {% block content %}
+        
+        
+        <!-- Middle of Page, include picture-->
+
+        <img src="{{url_for('static', filename='kids.png')}}" height="100%" width="100%"/>
+
+
+
+        <!-- Bottom of Page, include textbox and socials -->
+        <div class="outline">
+        <div class="socialMedia">
+            <a href="https://www.facebook.com/chigurublr/" target="_blank">
+                <button id="facebookBtn" class="socialBtn"></button>
+            </a>
+            <button onclick="window.location.href='contact'" id="whatsappBtn" class="socialBtn"></button>
+        </div>
+
+        <div class="contentBlock">
+
+
+
+
+            <h1>Welcome to the Chiguru Foundation Website!</h1>
+            <br>
+            {% for intro in introList %}
+                <p>
+                    <strong>{{intro.title}}</strong><br/>
+                    {{intro.description}}
+                </p>
+            {% endfor %}
+            <br>
+        </div> 
+ 
+    </div>
+    {%endblock%}
+
+            {% block scripts %}
+            <script>
+            </script>
+       
+    {% endblock %}
+    {% block navbar %}
+    {% include "navbar.html" %}
+    {% endblock %} 
